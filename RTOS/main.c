@@ -54,7 +54,8 @@ static void prvIncrementResetCount( void );
 	
 	// Initialize the LED tasks
 	// Initialize LED task rate
-	ledTaskRate = LED_TASK_RATE_BASE;
+	//ledTaskRate = LED_TASK_RATE_BASE;
+	ledTaskRate = 0x16;
 	vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
 	vStartMotorTask( mainMOTOR_TASK_PRIORITY );
 	vStartSerialTask( mainLED_TASK_PRIORITY, mainCOM_TEST_BAUD_RATE, 20 );

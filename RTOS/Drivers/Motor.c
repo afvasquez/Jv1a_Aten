@@ -50,6 +50,7 @@ void motor_setup(void) {
 	
 	// Create the Binary semaphore
 	motor_semaphore = xSemaphoreCreateBinary();
+	vQueueAddToRegistry(motor_semaphore, "Motor Semaphore");
 	
 	// Reset the elapsed time (in thousands of a second)
 	clkElapsed = 0x0000;	

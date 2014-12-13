@@ -55,6 +55,9 @@ unsigned char ucByte;
 		/* Create the queues used by the com test task. */
 		xRxedChars = xQueueCreate( uxQueueLength, sizeof( char ) );
 		xCharsForTx = xQueueCreate( uxQueueLength, sizeof( char ) );
+		
+		vQueueAddToRegistry(xRxedChars, "Rx Char Queue");
+		vQueueAddToRegistry(xCharsForTx, "Tx Char Queue");
 
 		/* Calculate the baud rate register value from the equation in the
 		data sheet. */
